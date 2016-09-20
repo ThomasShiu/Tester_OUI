@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetTestProgram">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lot" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="machineType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="departmentName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mcno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTestProgramResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTestProgramResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepartmentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetTestProgramSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTestProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetTestProgramSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTestProgramResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepartment" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TesterRecipe_ServiceSoap">
+    <wsdl:operation name="GetTestProgram">
+      <wsdl:input message="tns:GetTestProgramSoapIn" />
+      <wsdl:output message="tns:GetTestProgramSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartment">
+      <wsdl:input message="tns:GetDepartmentSoapIn" />
+      <wsdl:output message="tns:GetDepartmentSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TesterRecipe_ServiceSoap" type="tns:TesterRecipe_ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTestProgram">
+      <soap:operation soapAction="http://tempuri.org/GetTestProgram" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartment">
+      <soap:operation soapAction="http://tempuri.org/GetDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TesterRecipe_ServiceSoap12" type="tns:TesterRecipe_ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTestProgram">
+      <soap12:operation soapAction="http://tempuri.org/GetTestProgram" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartment">
+      <soap12:operation soapAction="http://tempuri.org/GetDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TesterRecipe_Service">
+    <wsdl:port name="TesterRecipe_ServiceSoap" binding="tns:TesterRecipe_ServiceSoap">
+      <soap:address location="http://172.21.150.134/tester_service/TesterRecipe_Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TesterRecipe_ServiceSoap12" binding="tns:TesterRecipe_ServiceSoap12">
+      <soap12:address location="http://172.21.150.134/tester_service/TesterRecipe_Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

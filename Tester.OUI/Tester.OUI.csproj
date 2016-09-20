@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BECCBF91-E45E-47CB-8D39-C5DD7F86C3F1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tester.OUI</RootNamespace>
+    <AssemblyName>Tester.OUI</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinSECS">
+      <HintPath>..\packages\winsecs\WinSECS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmTesterOUI_PM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTesterOUI_PM.Designer.cs">
+      <DependentUpon>FrmTesterOUI_PM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmTesterOUI_ST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTesterOUI_ST.Designer.cs">
+      <DependentUpon>FrmTesterOUI_ST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForms\frmrResetLot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForms\frmrResetLot.Designer.cs">
+      <DependentUpon>frmrResetLot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForms\frmSecsGem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForms\frmSecsGem.Designer.cs">
+      <DependentUpon>frmSecsGem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForms\frmSoftBins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForms\frmSoftBins.Designer.cs">
+      <DependentUpon>frmSoftBins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForms\frmLotInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForms\frmLotInfo.Designer.cs">
+      <DependentUpon>frmLotInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Observer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\UtilAutoSizeForm.cs" />
+    <Compile Include="Web References\TesterRecipe_Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\Tester_Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmTesterOUI_PM.resx">
+      <DependentUpon>FrmTesterOUI_PM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmTesterOUI_ST.resx">
+      <DependentUpon>FrmTesterOUI_ST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForms\frmrResetLot.resx">
+      <DependentUpon>frmrResetLot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForms\frmSecsGem.resx">
+      <DependentUpon>frmSecsGem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForms\frmSoftBins.resx">
+      <DependentUpon>frmSoftBins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForms\frmLotInfo.resx">
+      <DependentUpon>frmLotInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\TesterRecipe_Service\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\TesterRecipe_Service\TesterRecipe_Service.wsdl" />
+    <None Include="Web References\Tester_Service\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\Tester_Service\TestSummary_Service.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tester.OUI.Entities\Tester.OUI.Entities.csproj">
+      <Project>{2EA4B2B2-0D4E-4A9E-88CD-DDCEBCD562E4}</Project>
+      <Name>Tester.OUI.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tester.OUI.SummaryLogHander\Tester.OUI.SummaryLogHander.csproj">
+      <Project>{808B0611-3505-4C6E-A1FE-57A48AC3E542}</Project>
+      <Name>Tester.OUI.SummaryLogHander</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tester.OUI.Utilities\Tester.OUI.Utilities.csproj">
+      <Project>{824FCB78-31D2-4662-BF0C-A52EBA88DED4}</Project>
+      <Name>Tester.OUI.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tester.OUI.Winsecs\Tester.OUI.Winsecs.csproj">
+      <Project>{0365D1A5-E1BD-48CA-9A66-9506B6AFD40C}</Project>
+      <Name>Tester.OUI.Winsecs</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://172.21.150.134/tester_service/TesterRecipe_Service.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\TesterRecipe_Service\</RelPath>
+      <UpdateFromURL>http://172.21.150.134/tester_service/TesterRecipe_Service.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Tester_OUI_TesterRecipe_Service_TesterRecipe_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.21.150.134/Tester_Service/TestSummary_Service.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Tester_Service\</RelPath>
+      <UpdateFromURL>http://172.21.150.134/Tester_Service/TestSummary_Service.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Tester_OUI_Tester_Service_TestSummary_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\TesterRecipe_Service\TesterRecipe_Service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\Tester_Service\TestSummary_Service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\favicon.ico" />
+    <Content Include="Resources\ON.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

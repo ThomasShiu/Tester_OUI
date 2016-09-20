@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Tester.OUI.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Tester_OUI_TesterRecipe_Service_TesterRecipe_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.21.150.157/Tester_service/TesterRecipe_Service.asmx</Value>
+    </Setting>
+    <Setting Name="Tester_OUI_Tester_Service_TestSummary_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.21.150.134/Tester_Service/TestSummary_Service.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

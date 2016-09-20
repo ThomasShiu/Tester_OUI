@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RecordTestSummaryLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLotNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTester" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sItemName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tTestStartTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="tTestEndTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="iTotalTestCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iTotalGoodCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecordTestSummaryLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RecordTestSummaryLogResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHardBinAndSoftBinTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mctype" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHardBinAndSoftBinTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHardBinAndSoftBinTableResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRejectDataToCamstar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLotNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="equipment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="testBins" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateRejectDataToCamstarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateRejectDataToCamstarResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLotAttribute">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lotno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLotAttributeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLotAttributeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadTestResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mcno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lotno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="softbins" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hardbins" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadTestResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadTestResultResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HoldLot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lotno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="holdreason" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HoldLotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HoldLotResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInsertionQty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lotno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInsertionQtyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInsertionQtyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCamstarStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="equipment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCamstarStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateCamstarStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RecordTestSummaryLogSoapIn">
+    <wsdl:part name="parameters" element="tns:RecordTestSummaryLog" />
+  </wsdl:message>
+  <wsdl:message name="RecordTestSummaryLogSoapOut">
+    <wsdl:part name="parameters" element="tns:RecordTestSummaryLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHardBinAndSoftBinTableSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHardBinAndSoftBinTable" />
+  </wsdl:message>
+  <wsdl:message name="GetHardBinAndSoftBinTableSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHardBinAndSoftBinTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRejectDataToCamstarSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRejectDataToCamstar" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRejectDataToCamstarSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRejectDataToCamstarResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLotAttributeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLotAttribute" />
+  </wsdl:message>
+  <wsdl:message name="GetLotAttributeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLotAttributeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadTestResultSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadTestResult" />
+  </wsdl:message>
+  <wsdl:message name="UploadTestResultSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadTestResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="HoldLotSoapIn">
+    <wsdl:part name="parameters" element="tns:HoldLot" />
+  </wsdl:message>
+  <wsdl:message name="HoldLotSoapOut">
+    <wsdl:part name="parameters" element="tns:HoldLotResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInsertionQtySoapIn">
+    <wsdl:part name="parameters" element="tns:GetInsertionQty" />
+  </wsdl:message>
+  <wsdl:message name="GetInsertionQtySoapOut">
+    <wsdl:part name="parameters" element="tns:GetInsertionQtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCamstarStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCamstarStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCamstarStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCamstarStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TestSummary_ServiceSoap">
+    <wsdl:operation name="RecordTestSummaryLog">
+      <wsdl:input message="tns:RecordTestSummaryLogSoapIn" />
+      <wsdl:output message="tns:RecordTestSummaryLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHardBinAndSoftBinTable">
+      <wsdl:input message="tns:GetHardBinAndSoftBinTableSoapIn" />
+      <wsdl:output message="tns:GetHardBinAndSoftBinTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRejectDataToCamstar">
+      <wsdl:input message="tns:UpdateRejectDataToCamstarSoapIn" />
+      <wsdl:output message="tns:UpdateRejectDataToCamstarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLotAttribute">
+      <wsdl:input message="tns:GetLotAttributeSoapIn" />
+      <wsdl:output message="tns:GetLotAttributeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadTestResult">
+      <wsdl:input message="tns:UploadTestResultSoapIn" />
+      <wsdl:output message="tns:UploadTestResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HoldLot">
+      <wsdl:input message="tns:HoldLotSoapIn" />
+      <wsdl:output message="tns:HoldLotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInsertionQty">
+      <wsdl:input message="tns:GetInsertionQtySoapIn" />
+      <wsdl:output message="tns:GetInsertionQtySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCamstarStatus">
+      <wsdl:input message="tns:UpdateCamstarStatusSoapIn" />
+      <wsdl:output message="tns:UpdateCamstarStatusSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TestSummary_ServiceSoap" type="tns:TestSummary_ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RecordTestSummaryLog">
+      <soap:operation soapAction="http://tempuri.org/RecordTestSummaryLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHardBinAndSoftBinTable">
+      <soap:operation soapAction="http://tempuri.org/GetHardBinAndSoftBinTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRejectDataToCamstar">
+      <soap:operation soapAction="http://tempuri.org/UpdateRejectDataToCamstar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLotAttribute">
+      <soap:operation soapAction="http://tempuri.org/GetLotAttribute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadTestResult">
+      <soap:operation soapAction="http://tempuri.org/UploadTestResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HoldLot">
+      <soap:operation soapAction="http://tempuri.org/HoldLot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInsertionQty">
+      <soap:operation soapAction="http://tempuri.org/GetInsertionQty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCamstarStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdateCamstarStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TestSummary_ServiceSoap12" type="tns:TestSummary_ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RecordTestSummaryLog">
+      <soap12:operation soapAction="http://tempuri.org/RecordTestSummaryLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHardBinAndSoftBinTable">
+      <soap12:operation soapAction="http://tempuri.org/GetHardBinAndSoftBinTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRejectDataToCamstar">
+      <soap12:operation soapAction="http://tempuri.org/UpdateRejectDataToCamstar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLotAttribute">
+      <soap12:operation soapAction="http://tempuri.org/GetLotAttribute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadTestResult">
+      <soap12:operation soapAction="http://tempuri.org/UploadTestResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HoldLot">
+      <soap12:operation soapAction="http://tempuri.org/HoldLot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInsertionQty">
+      <soap12:operation soapAction="http://tempuri.org/GetInsertionQty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCamstarStatus">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCamstarStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TestSummary_Service">
+    <wsdl:port name="TestSummary_ServiceSoap" binding="tns:TestSummary_ServiceSoap">
+      <soap:address location="http://172.21.155.196/tester%20service/TestSummary_Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TestSummary_ServiceSoap12" binding="tns:TestSummary_ServiceSoap12">
+      <soap12:address location="http://172.21.155.196/tester%20service/TestSummary_Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
